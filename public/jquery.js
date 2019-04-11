@@ -13,7 +13,7 @@ $( document ).ready(function() {
                     questions += `${i+1}. ${question.text} <br>`;
                 });
                 responses[0].messages.forEach(function(answerObj) {
-                    if (Array.isArray(answerObj.speech[0]) && answerObj.speech[0].length) {
+                    if (Array.isArray(answerObj.speech) && answerObj.length) {
                         answerObj.speech.forEach(function (answer, i) {
                             answers += `${i + 1}. ${answer} <br>`
                         });
