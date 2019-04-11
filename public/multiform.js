@@ -3,8 +3,8 @@ var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
 
-$(".next").click(function(){
-    if(animating) return false;
+$(".next").click(function () {
+    if (animating) return false;
     animating = true;
 
     current_fs = $(this).parent();
@@ -17,19 +17,19 @@ $(".next").click(function(){
     next_fs.show();
     //hide the current fieldset with style
     current_fs.animate({opacity: 0}, {
-        step: function(now, mx) {
+        step: function (now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale current_fs down to 80%
             scale = 1 - (1 - now) * 0.2;
             //2. bring next_fs from the right(50%)
-            left = (now * 50)+"%";
+            left = (now * 50) + "%";
             //3. increase opacity of next_fs to 1 as it moves in
             opacity = 1 - now;
-            current_fs.css({'transform': 'scale('+scale+')'});
+            current_fs.css({'transform': 'scale(' + scale + ')'});
             next_fs.css({'left': left, 'opacity': opacity});
         },
         duration: 500,
-        complete: function(){
+        complete: function () {
             current_fs.hide();
             animating = false;
         },
@@ -38,8 +38,8 @@ $(".next").click(function(){
     });
 });
 
-$(".previous").click(function(){
-    if(animating) return false;
+$(".previous").click(function () {
+    if (animating) return false;
     animating = true;
 
     current_fs = $(this).parent();
@@ -52,19 +52,19 @@ $(".previous").click(function(){
     previous_fs.show();
     //hide the current fieldset with style
     current_fs.animate({opacity: 0}, {
-        step: function(now, mx) {
+        step: function (now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale previous_fs from 80% to 100%
             scale = 0.8 + (1 - now) * 0.2;
             //2. take current_fs to the right(50%) - from 0%
-            left = ((1-now) * 50)+"%";
+            left = ((1 - now) * 50) + "%";
             //3. increase opacity of previous_fs to 1 as it moves in
             opacity = 1 - now;
             current_fs.css({'left': left});
-            previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+            previous_fs.css({'transform': 'scale(' + scale + ')', 'opacity': opacity});
         },
         duration: 500,
-        complete: function(){
+        complete: function () {
             current_fs.hide();
             animating = false;
         },
@@ -73,6 +73,32 @@ $(".previous").click(function(){
     });
 });
 
-$(".submit").click(function(){
+$(".submit").click(function () {
+    const businessName = ($('#q1-input')[0].value);
+    const businessAddress = ($('#q2-input')[0].value);
+    const openingHours = ($('#q3-input')[0].value);
+    const vegan = ($('#q4-input')[0].value);
+    if (businessName && businessAddress && openingHours && vegan) {
+        $('#preloader').removeClass("hide-preloader");
+        $('#preloader').addClass("display-preloader");
+        $('html').toggleClass("half");
+
+        const arr = [{name: 'Address', newMessage: businessAddress},
+            {name: 'Default Welcome Intent', newMessage: `Hi! Welcome to ${businessName}, how can I help you today?`},
+            {name: 'Hours', newMessage: openingHours},
+            {name: 'vegan', newMessage: vegan}];
+        $.ajax({
+            method: 'POST',
+            url: '/intents/bulk/',
+            data: {data: arr},
+            dataType: 'json'
+        })
+            .done(function (response) {
+                $('#preloader').addClass("hide-preloader");
+                $('#preloader').removeClass("display-preloader");
+                $('html').toggleClass("half");
+                window.location.href = '/dashboard.html?redirect=true';
+            });
+    }
     return false;
 });

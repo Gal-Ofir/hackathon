@@ -19,9 +19,30 @@ const updateIntentByName = (req, res) => {
 
 const handleIntents = (req, res) => {
     console.log(req.body);
-
-    res.json({
-            speech: `Your question was ${req.body.result.resolvedQuery}`});
+    const intentName = req.body.result.metadata.intentName;
+    if (intentName === 'Make appointment' && !req.body.result.actionIncomplete) {
+        const {date, time, number} = req.body.result.parameters;
+        res.json({
+            speech: `Sure, I booked your reservation for ${date}, at ${time}. I will send an SMS to confirm your reservation`
+        });
+    }
+    else {
+        res.json({
+            speech: `Your question was ${req.body.result.resolvedQuery}`
+        });
+    }
 };
 
-module.exports = {getAllIntents, updateIntentByName, handleIntents};
+const bulkUpdateIntentByName = (req, res) => {
+    const {data} = req.body;
+    const promises = [];
+    data.forEach(intent => {
+        promises.push(changeIntentAnswerByName(intent.name, intent.newMessage));
+    });
+    Promise.all(promises)
+        .then(responses => {
+            res.json({status: 'success'});
+        })
+};
+
+module.exports = {getAllIntents, updateIntentByName, handleIntents, bulkUpdateIntentByName};

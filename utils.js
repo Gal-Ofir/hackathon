@@ -177,7 +177,7 @@ function authorize(credentials, callback, callbackData) {
     fs.readFile(TOKEN_PATH, (err, token) => {
         if (err) return getAccessToken(oAuth2Client, callback, callbackData);
         oAuth2Client.setCredentials(JSON.parse(token));
-        callback(oAuth2Client);
+        callback(oAuth2Client, callbackData);
     });
 }
 
@@ -207,6 +207,7 @@ function getAccessToken(oAuth2Client, callback, callbackData) {
     });
 }
 function insertEvents(auth, data) {
+    console.log(data);
     const {startTime, endTime, description, calenderId} = data;
     const calendar = google.calendar({version: 'v3', auth});
     calendar.events.insert({
