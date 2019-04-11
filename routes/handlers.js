@@ -20,7 +20,7 @@ const updateIntentByName = (req, res) => {
 const handleIntents = (req, res) => {
     console.log(req);
 
-    res.json(req);
+    res.json({status: 'success!'});
 };
 
 module.exports = {getAllIntents, updateIntentByName, handleIntents};

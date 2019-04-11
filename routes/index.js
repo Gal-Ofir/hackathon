@@ -3,5 +3,5 @@ const handlers = require('./handlers');
 
 router.get('/intents', handlers.getAllIntents);
 router.put('/intents/', handlers.updateIntentByName);
-router.post('/webhok', handlers.handleIntents);
+router.post('/webhook', handlers.handleIntents);
 module.exports = router;
