@@ -20,7 +20,8 @@ const updateIntentByName = (req, res) => {
 const handleIntents = (req, res) => {
     console.log(req.body);
 
-    res.json({status: 'success!'});
+    res.json({fulfillment: {
+            speech: 'success!'}});
 };
 
 module.exports = {getAllIntents, updateIntentByName, handleIntents};
