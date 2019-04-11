@@ -18,7 +18,7 @@ const updateIntentByName = (req, res) => {
 };
 
 const handleIntents = (req, res) => {
-    console.log(req);
+    console.log(req.body);
 
     res.json({status: 'success!'});
 };
