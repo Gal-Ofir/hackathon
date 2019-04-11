@@ -6,102 +6,63 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./multiform.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 <body>
-
 <!-- multistep form -->
 <form id="msform">
     <!-- progressbar -->
+    <img src="Preloader_10.gif" id="preloader" class="hide-preloader"/>
     <ul id="progressbar">
         <li class="active"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
         <li></li>
         <li></li>
         <li></li>
     </ul>
     <!-- fieldsets -->
     <fieldset>
+
         <h2 class="fs-title">Question 1</h2>
-        <h3 class="fs-subtitle">What do you consider your main strengths to be?</h3>
+        <h3 class="fs-subtitle">How is your business called?</h3>
         <!--<p class="help-block">List your strengths here.</p>-->
-        <textarea class="form-control" name="CAT_Custom_1" id="CAT_Custom_1" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="next" class="next action-button" value="Next"/>
+        <input type="text" class="form-control" name="CAT_Custom_1" id="q1-input"/>
+        <input type="button" name="next" class="button next action-button" value="Next"/>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">Question 2</h2>
-        <h3 class="fs-subtitle">What do your colleagues consider your main strengths to be?</h3>
-        <textarea class="form-control" name="CAT_Custom_2" id="CAT_Custom_2" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+        <h3 class="fs-subtitle">What is your business address?</h3>
+        <input type="text" class="form-control" name="CAT_Custom_2" id="q2-input">
         <input type="button" name="previous" class="previous action-button" value="Previous"/>
         <input type="button" name="next" class="next action-button" value="Next"/>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">Question 3</h2>
-        <h3 class="fs-subtitle">What have been your main achievements?</h3>
-        <textarea class="form-control" name="CAT_Custom_3" id="CAT_Custom_3" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+        <h3 class="fs-subtitle">When is your business open?</h3>
+        <input type="text" class="form-control" name="CAT_Custom_3" id="q3-input">
         <input type="button" name="previous" class="previous action-button" value="Previous"/>
         <input type="button" name="next" class="next action-button" value="Next"/>
     </fieldset>
     <fieldset>
         <h2 class="fs-title">Question 4</h2>
-        <h3 class="fs-subtitle">What do you consider your main weaknesses to be?</h3>
-        <textarea class="form-control" name="CAT_Custom_4" id="CAT_Custom_4" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="previous" class="previous action-button" value="Previous"/>
-        <input type="button" name="next" class="next action-button" value="Next"/>
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">Question 5</h2>
-        <h3 class="fs-subtitle">What do your colleagues consider your main weaknesses to be?</h3>
-        <textarea class="form-control" name="CAT_Custom_5" id="CAT_Custom_5" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="previous" class="previous action-button" value="Previous"/>
-        <input type="button" name="next" class="next action-button" value="Next"/>
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">Question 6</h2>
-        <h3 class="fs-subtitle">In what areas would you like to improve your clinical skills?</h3>
-        <textarea class="form-control" name="CAT_Custom_6" id="CAT_Custom_6" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="previous" class="previous action-button" value="Previous"/>
-        <input type="button" name="next" class="next action-button" value="Next"/>
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">Question 7</h2>
-        <h3 class="fs-subtitle">In what areas would you like to improve your non-clinical skills?</h3>
-        <textarea class="form-control" name="CAT_Custom_7" id="CAT_Custom_7" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="previous" class="previous action-button" value="Previous"/>
-        <input type="button" name="next" class="next action-button" value="Next"/>
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">Question 8</h2>
-        <h3 class="fs-subtitle">Are there any specific areas of compliance training that you need to complete?</h3>
-        <textarea class="form-control" name="CAT_Custom_8" id="CAT_Custom_8" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="previous" class="previous action-button" value="Previous"/>
-        <input type="button" name="next" class="next action-button" value="Next"/>
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">Question 9</h2>
-        <h3 class="fs-subtitle">What postgraduate qualifications do you hold?</h3>
-        <textarea class="form-control" name="CAT_Custom_9" id="CAT_Custom_9" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
-        <input type="button" name="previous" class="previous action-button" value="Previous"/>
-        <input type="button" name="next" class="next action-button" value="Next"/>
-    </fieldset>
-    <fieldset>
-        <h2 class="fs-title">Question 10</h2>
-        <h3 class="fs-subtitle">What postgraduate qualifications or training do you wish to obtain?</h3>
-        <textarea class="form-control" name="CAT_Custom_10" id="CAT_Custom_10" rows="4"
-                  onkeydown="if(this.value.length>=4000)this.value=this.value.substring(0,3999);"></textarea>
+        <h3 class="fs-subtitle">What does your business offer?</h3>
+        <input type="text" class="form-control" name="CAT_Custom_10" id="q4-input">
         <input type="button" name="previous" class="previous action-button" value="Previous"/>
         <input type="submit" name="submit" class="submit action-button" value="Submit"/>
     </fieldset>
