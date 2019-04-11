@@ -20,8 +20,8 @@ const updateIntentByName = (req, res) => {
 const handleIntents = (req, res) => {
     console.log(req.body);
 
-    res.json({fulfillment: {
-            speech: 'success!'}});
+    res.json({
+            speech: `Your question was ${req.body.resolvedQuery}`});
 };
 
 module.exports = {getAllIntents, updateIntentByName, handleIntents};
