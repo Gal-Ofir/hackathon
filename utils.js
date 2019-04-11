@@ -151,12 +151,6 @@ const tomorrow4pm = new Date();
 tomorrow4pm.setDate(tomorrow3pm.getDate() + 1);
 tomorrow4pm.setHours(16, 0, 0);
 
-// Make the query
-const cal = google.calendar({
-    version: 'v3',
-    auth: GOOGLE_CALENDER_API_KEY
-});
-
 const fs = require('fs');
 const readline = require('readline');
 const insertEvent = (data) => {
