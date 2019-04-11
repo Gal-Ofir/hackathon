@@ -18,6 +18,8 @@ const updateIntentByName = (req, res) => {
 };
 
 const handleIntents = (req, res) => {
+    console.log(req);
+    
     res.json(req);
 };
 
