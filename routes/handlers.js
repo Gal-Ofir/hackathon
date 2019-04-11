@@ -23,21 +23,21 @@ const handleIntents = (req, res) => {
     const intentName = req.body.result.metadata.intentName;
     if (intentName === 'Make appointment' && !req.body.result.actionIncomplete) {
         const {date, time, number} = req.body.result.parameters;
-        res.json({
-            speech: `Sure, I booked your reservation for ${date}, at ${time}. I will send an SMS to confirm your reservation`
-        });
         const dateMoment = moment(date, "YYYY-MM-DD");
         const [hour, minute, seconds] = time.split(":");
         const startTime = dateMoment.toDate();
         const endTime = dateMoment.toDate();
+        res.json({
+            speech: `Sure, I booked your reservation for ${date}, at ${hour}:${minute}. I will send an SMS to confirm your reservation`
+        });
 
         startTime.setHours(hour, minute, seconds);
         endTime.setHours(parseInt(hour)+1, minute, seconds);
 
-        const description = (number) ? `[MOTI] Reservation for ${number}` : `[MOTI] Appointment Scheduled`
+        const description = (number) ? `[MOTI] Reservation for ${number}` : `[MOTI] Appointment Scheduled`;
         const calenderId = 'galx56@gmail.com';
         const data = {startTime, endTime, description, calenderId};
-        const smsMessage = `Your reservation is confirmed! On ${date} at ${time}`;
+        const smsMessage = `Your reservation is confirmed! On ${date} at ${hour}:${minute}`;
         insertEvent(data);
         sendSms(smsMessage, '+972545222886');
     }
