@@ -1,4 +1,5 @@
-const {getAllIntentNamesAndCurrentAnswers, changeIntentAnswerByName} = require('../utils');
+const {getAllIntentNamesAndCurrentAnswers, changeIntentAnswerByName, insertEvent, sendSms} = require('../utils');
+const moment = require('moment');
 
 const getAllIntents = (req, res) => {
     getAllIntentNamesAndCurrentAnswers()
@@ -25,6 +26,20 @@ const handleIntents = (req, res) => {
         res.json({
             speech: `Sure, I booked your reservation for ${date}, at ${time}. I will send an SMS to confirm your reservation`
         });
+        const dateMoment = moment(date, "YYYY-MM-DD");
+        const [hour, minute, seconds] = time.split(":");
+        const startTime = dateMoment.toDate();
+        const endTime = dateMoment.toDate();
+
+        startTime.setHours(hour, minute, seconds);
+        endTime.setHours(parseInt(hour)+1, minute, seconds);
+
+        const description = (number) ? `[MOTI] Reservation for ${number}` : `[MOTI] Appointment Scheduled`
+        const calenderId = 'galx56@gmail.com';
+        const data = {startTime, endTime, description, calenderId};
+        const smsMessage = `Your reservation is confirmed! On ${date} at ${time}`;
+        insertEvent(data);
+        sendSms(smsMessage, '+972545222886');
     }
     else {
         res.json({
