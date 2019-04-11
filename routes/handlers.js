@@ -21,7 +21,7 @@ const handleIntents = (req, res) => {
     console.log(req.body);
 
     res.json({
-            speech: `Your question was ${req.body.resolvedQuery}`});
+            speech: `Your question was ${req.body.result.resolvedQuery}`});
 };
 
 module.exports = {getAllIntents, updateIntentByName, handleIntents};
