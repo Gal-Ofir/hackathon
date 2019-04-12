@@ -12,19 +12,19 @@ app.set('view engine', 'ejs');
 
 app
     .get('/', function(req, res) {
-        res.render('index')
+        res.render('index');
     })
     .get('/categories', function(req, res) {
-        res.render('categories')
+        res.render('categories');
     })
     .get('/train', function(req, res) {
-        let agent = req.query.agent
+        let agent = req.query.agent;
         console.log("agent: ", agent);
         res.render(agent)
     })
     .get('/dashboard', function(req, res) {
         res.send('dashboard');
-    })
+    });
 
 // app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json

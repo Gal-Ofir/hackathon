@@ -28,7 +28,7 @@ const handleIntents = (req, res) => {
         const startTime = dateMoment.toDate();
         const endTime = dateMoment.toDate();
         res.json({
-            speech: `Sure, I booked your ${treatment} appointment for ${date}, at ${hour}:${minute}. I will send an SMS to confirm your reservation`
+            speech: `Sure, I booked your ${treatment} appointment for ${date}, at ${hour}:${minute}.`
         });
 
         startTime.setHours(parseInt(hour)-3, minute, seconds);
