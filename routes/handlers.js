@@ -39,7 +39,7 @@ const handleIntents = (req, res) => {
         const data = {startTime, endTime, description, calenderId};
         const smsMessage = `Your reservation is confirmed! On ${date} at ${hour}:${minute}`;
         insertEvent(data);
-      //  sendSms(smsMessage, '+972545222886');
+        sendSms(smsMessage, '+972545222886');
     }
     else {
         res.json({
