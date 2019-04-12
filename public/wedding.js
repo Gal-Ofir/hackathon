@@ -89,7 +89,7 @@ $(".submit").click(function () {
             {name: 'vegan', newMessage: vegan}];
         $.ajax({
             method: 'POST',
-            url: '/intents/bulk/',
+            url: '/wedding/intents/bulk/',
             data: {data: arr},
             dataType: 'json'
         })

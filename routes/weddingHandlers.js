@@ -1,4 +1,4 @@
-const {getAllIntentNamesAndCurrentAnswers, changeIntentAnswerByName, insertEvent, sendSms} = require('../utils');
+const {getAllIntentNamesAndCurrentAnswers, changeIntentAnswerByName, insertEvent, sendSms} = require('../utils-wedding');
 const moment = require('moment');
 
 const getAllIntents = (req, res) => {
