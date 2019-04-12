@@ -26,8 +26,8 @@ app
         res.send('dashboard');
     })
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
-app.use(bodyParser.json());
+app.use(bodyParser());
 app.use(routers);
 app.listen((process.env.PORT || port), () => console.log(`Example app listening on port ${port}!`));
