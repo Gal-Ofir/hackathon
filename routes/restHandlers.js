@@ -43,7 +43,6 @@ const handleIntents = (req, res) => {
     }
     else {
         res.json({
-            speech: `Your question was ${req.body.result.resolvedQuery}`
         });
     }
 };
