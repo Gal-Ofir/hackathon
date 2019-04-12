@@ -2204,6 +2204,12 @@ fieldset[disabled] .btn-neutral.active {
     background-color: #FFFFFF;
     margin-bottom: 30px;
 }
+.image:hover {
+  cursor: pointer;
+}
+.category:hover {
+  cursor: pointer;
+}
 
 .card .image {
     width: 100%;
