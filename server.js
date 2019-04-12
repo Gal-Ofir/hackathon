@@ -19,17 +19,15 @@ app
     })
     .get('/train', function(req, res) {
         let agent = req.query.agent
-        // res.render('train', {
-        //     questions: questions
-        // })
-        // res.render
-        res.render('multiform', {
-            agent: agent
-        })
+        console.log("agent: ", agent);
+        res.render(agent)
+    })
+    .get('/dashboard', function(req, res) {
+        res.send('dashboard');
     })
 
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
-// app.use(routers);
+app.use(routers);
 app.listen((process.env.PORT || port), () => console.log(`Example app listening on port ${port}!`));
