@@ -63,7 +63,7 @@ body {
     margin: 10px 5px;
 }
 #msform .action-button:hover, #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #37d629;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #7fbfd6;
 }
 /*headings*/
 .fs-title {
@@ -78,14 +78,15 @@ body {
     color: #666;
     margin-bottom: 20px;
 }
-/*progressbar*/
 #progressbar {
-    margin-left:230px;
+    width: 224%;
+    margin-left: 28px;
     margin-bottom: 30px;
     overflow: hidden;
-    /*CSS counters to number the steps*/
     counter-reset: step;
+    padding-top: 25px;
 }
+
 #progressbar li {
     list-style-type: none;
     color: white;
