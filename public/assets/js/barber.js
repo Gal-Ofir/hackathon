@@ -83,8 +83,8 @@ $(".submit").click(function () {
         $('#preloader').addClass("display-preloader");
         $('html').toggleClass("half");
 
-        const arr = [{name: 'Address', newMessage: `${businessAddress}, but I work everywhere!`},
-            {name: 'Default Welcome Intent', newMessage: `Hi! Welcome to ${businessName}, how can I help you today?`},
+        const arr = [{name: 'Address', newMessage: `${businessAddress}`},
+            {name: 'Default Welcome Intent', newMessage: `Hi! you've reached ${businessName}, how can I help you today?`},
             {name: 'Hours', newMessage: openingHours},
             {name: 'vegan', newMessage: vegan}];
         $.ajax({
