@@ -1,5 +1,6 @@
 const CLIENT_ID = 'b82225a97aa64833942d6f5aef224c40  ';
-const DEVELOPER_TOKEN = 'abfa428d27da4d5faae7d8ead07321c3';
+//const DEVELOPER_TOKEN = 'abfa428d27da4d5faae7d8ead07321c3';
+const DEVELOPER_TOKEN = '3f48cef65b934945a7cd25d41ffa5faf';
 const PROJECT_ID = 'hackathon-2a8da';
 const INTENTS_URL = 'https://api.dialogflow.com/v1/intents?v=20150910';
 const GOOGLE_CALENDER_CLIENT_ID = '469053331980-tu836344jpsojncnpqorsmf8a8579ok9.apps.googleusercontent.com\n';
