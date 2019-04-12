@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Moti</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -33,17 +33,20 @@
     <form action="/train" method="get" id="agent-form">
       <input hidden type="text" name="agent" id="agent-value"/>
     </form>
-    <div style="padding: 90px;">
-        <h4 style="padding: 15px;">Moti</h4>
+    <div style="padding: 80px;">
+        <div style="padding: 15px;">
+          <h4>Moti</h4>
+          <p>Choose your business type.</p>
+        </div>
         <div class="content">
           <div class="col-md-4">
-              <div class="card">
+              <div class="card" onclick="send('rest')">
                   <div class="image">
-                      <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                      <img src="assets/img/rest.jpeg" style="height: 74%"/>
                   </div>
-                  <div class="content">
+                  <div class="content category">
                     <div class="content text-center">
-                      <a onclick="send('rest')">
+                      <a>
                         <h4 class="title">Restaurant</h4>
                       </a>
                     </div>
@@ -52,16 +55,16 @@
                   <div class="text-center space">
                     Where people go to eat.
                   </div>
-          </div>
+            </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" onclick="send('barber')">
                 <div class="image">
-                    <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                    <img src="assets/img/barber.png"/>
                 </div>
-                <div class="content">
+                <div class="content category">
                   <div class="content text-center">
-                    <a onclick="send('barber')">
+                    <a>
                       <h4 class="title">Barber Shop</h4>
                     </a>
                   </div>
@@ -73,20 +76,20 @@
               </div>
         </div>
         <div class="col-md-4">
-            <div class="card">
+            <div class="card" onclick="send('wedding')">
                 <div class="image">
-                    <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
+                    <img src="assets/img/wedding.png"/>
                 </div>
-                <div class="content">
+                <div class="content category">
                   <div class="content text-center">
-                    <a onclick="send('wedding')">
+                    <a>
                       <h4 class="title">Photographer</h4>
                     </a>
                   </div>
                   <hr>
                 </div>
                 <div class="text-center space">
-                  Taking pictures of things.
+                  Capturing moments.
                 </div>
               </div>
         </div>
