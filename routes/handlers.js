@@ -31,15 +31,15 @@ const handleIntents = (req, res) => {
             speech: `Sure, I booked your reservation for ${date}, at ${hour}:${minute}. I will send an SMS to confirm your reservation`
         });
 
-        startTime.setHours(hour, minute, seconds);
-        endTime.setHours(parseInt(hour)+1, minute, seconds);
+        startTime.setHours(parseInt(hour)-3, minute, seconds);
+        endTime.setHours(parseInt(hour)-2, minute, seconds);
 
         const description = (number) ? `[MOTI] Reservation for ${number}` : `[MOTI] Appointment Scheduled`;
         const calenderId = 'galx56@gmail.com';
         const data = {startTime, endTime, description, calenderId};
         const smsMessage = `Your reservation is confirmed! On ${date} at ${hour}:${minute}`;
         insertEvent(data);
-        sendSms(smsMessage, '+972545222886');
+      //  sendSms(smsMessage, '+972545222886');
     }
     else {
         res.json({
