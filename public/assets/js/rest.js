@@ -97,7 +97,7 @@ $(".submit").click(function () {
                 $('#preloader').addClass("hide-preloader");
                 $('#preloader').removeClass("display-preloader");
                 $('html').toggleClass("half");
-                window.location.href = '/dashboard.html?redirect=true';
+                window.location.href = '/dashboard.html?redirect=rest';
             });
     }
     else {
