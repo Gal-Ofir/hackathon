@@ -33,12 +33,9 @@
     <div class="wrapper">
     <div class="main-panel">
       <h1>Moti</h1>
-      <p>Some sentence here.</p>
+      <p>Every business needs a moti.</p>
       <hr>
       <div class="big">
-          <a href="/categories" class="title">
-              <i class="pe-7s-magic-wand"></i> Get started
-          </a>
 
           <div class="content all-icons">
             <div class="row">
@@ -61,7 +58,15 @@
                 </div>
               </div>
 
+              <form action="/categories" id="start-form"></form>
 
+              <div onclick="start()"
+                style="padding-left: 100px"
+                class="start font-icon-list col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xs-6">
+                <div class="font-icon-detail"><i class="pe-7s-magic-wand"></i>
+                <p>START</p>
+                </div>
+              </div>
             </div>
           </div>
       </div>
@@ -82,4 +87,9 @@
 
   <!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
   <script src="assets/js/demo.js"></script>
+  <script type="text/javascript">
+    function start() {
+      document.getElementById('start-form').submit()
+    }
+  </script>
 </html>

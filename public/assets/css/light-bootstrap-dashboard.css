@@ -171,6 +171,13 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
+.start:hover {
+  cursor: pointer;
+}
+.start {
+  font-size: 20px;
+}
+
 a:focus, a:active,
 button::-moz-focus-inner,
 input::-moz-focus-inner,
