@@ -1,8 +1,21 @@
 const router = require('express').Router();
-const handlers = require('./handlers');
+const weddingHandlers = require('./weddingHandlers');
+const restHandlers = require('./restHandlers');
+const barberHandlers = require('./barberHandlers');
 
-router.get('/intents', handlers.getAllIntents);
-router.put('/intents/', handlers.updateIntentByName);
-router.post('/intents/bulk/', handlers.bulkUpdateIntentByName);
-router.post('/webhook', handlers.handleIntents);
+router.get('/wedding/intents', weddingHandlers.getAllIntents);
+router.put('/wedding/intents/', weddingHandlers.updateIntentByName);
+router.post('/wedding/intents/bulk/', weddingHandlers.bulkUpdateIntentByName);
+router.post('/wedding/webhook', weddingHandlers.handleIntents);
+
+router.get('/rest/intents', restHandlers.getAllIntents);
+router.put('/rest/intents/', restHandlers.updateIntentByName);
+router.post('/rest/intents/bulk/', restHandlers.bulkUpdateIntentByName);
+router.post('/rest/webhook', restHandlers.handleIntents);
+
+router.get('/barber/intents', barberHandlers.getAllIntents);
+router.put('/barber/intents/', barberHandlers.updateIntentByName);
+router.post('/barber/intents/bulk/', barberHandlers.bulkUpdateIntentByName);
+router.post('/barber/webhook', barberHandlers.handleIntents);
+
 module.exports = router;
