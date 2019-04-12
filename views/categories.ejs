@@ -30,6 +30,9 @@
 <body>
 
 <div class="wrapper">
+    <form action="/train" method="get" id="agent-form">
+      <input hidden type="text" name="agent" id="agent-value"/>
+    </form>
     <div style="padding: 90px;">
         <h4 style="padding: 15px;">Moti</h4>
         <div class="content">
@@ -40,7 +43,7 @@
                   </div>
                   <div class="content">
                     <div class="content text-center">
-                      <a href="/train/restaurant">
+                      <a onclick="send('restaurant')">
                         <h4 class="title">Restaurant</h4>
                       </a>
                     </div>
@@ -58,7 +61,7 @@
                 </div>
                 <div class="content">
                   <div class="content text-center">
-                    <a href="/train/barber">
+                    <a onclick="send('barber')">
                       <h4 class="title">Barber Shop</h4>
                     </a>
                   </div>
@@ -76,7 +79,7 @@
                 </div>
                 <div class="content">
                   <div class="content text-center">
-                    <a href="/train/photographer">
+                    <a onclick="send('photographer')">
                       <h4 class="title">Photographer</h4>
                     </a>
                   </div>
@@ -92,6 +95,12 @@
 
 
 </body>
+  <script type="text/javascript">
+    function send(agent) {
+      document.getElementById('agent-value').value = agent;
+      document.getElementById('agent-form').submit()
+    }
+  </script>
 
     <!--   Core JS Files   -->
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>

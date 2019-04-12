@@ -17,10 +17,14 @@ app
     .get('/categories', function(req, res) {
         res.render('categories')
     })
-    .get('/train/:genre', function(req, res) {
-        let agentName = req.params.genre
-        res.render('train', {
-            questions: questions
+    .get('/train', function(req, res) {
+        let agent = req.query.agent
+        // res.render('train', {
+        //     questions: questions
+        // })
+        // res.render
+        res.render('multiform', {
+            agent: agent
         })
     })
 
