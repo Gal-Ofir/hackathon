@@ -100,5 +100,8 @@ $(".submit").click(function () {
                 window.location.href = '/dashboard.html?redirect=true';
             });
     }
+    else {
+        $(".alert").toggleClass('in out');
+    }
     return false;
 });

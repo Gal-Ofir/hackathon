@@ -80,11 +80,12 @@ body {
 }
 #progressbar {
     width: 224%;
-    margin-left: 28px;
-    margin-bottom: 30px;
+    margin-top: -26px;
+    margin-left: 29px;
+    margin-bottom: 10px;
     overflow: hidden;
     counter-reset: step;
-    padding-top: 25px;
+    /* padding-top: 25px; */
 }
 
 #progressbar li {
@@ -153,4 +154,10 @@ body {
 
 .half {
     opacity: 0.5;
+}
+
+header  {
+    width: 100%;
+    background: #cebcbc;
+    height: 49px;
 }
