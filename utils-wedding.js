@@ -216,7 +216,7 @@ function insertEvents(auth, data) {
             start: {dateTime: startTime},
             end: {dateTime: endTime},
             description: description,
-            summary: calenderId,
+            summary: description,
             sendUpdates: 'all',
             attendees: [{email: calenderId}]
         }
